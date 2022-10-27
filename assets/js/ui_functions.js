@@ -2,32 +2,37 @@ const foundersData = [
     {
         img: "yogesh.png",
         name: "Yogesh",
-        designation: "Principal Founder"
+        designation: "Founder (Vision)"
     },
     {
         img: "adarsh.png",
         name: "Adarsh",
-        designation: "Principal Founder"
+        designation: "Founder (Operations)"
     },
     {
         img: "Sherwin.png",
         name: "Sherwin",
-        designation: "Co-Founder"
+        designation: "Founder (Product)"
     },
     {
         img: "zeeshan.png",
         name: "Zeeshan",
-        designation: "Co-Founder"
+        designation: "Founder (Technology)"
     },
     {
-        img: "yogesh.png",
-        name: "Yogesh",
-        designation: "Principal Founder"
+        img: "nilesh.png",
+        name: "Nilesh",
+        designation: "Founder (Growth)"
     },
     {
-        img: "yogesh.png",
-        name: "Yogesh",
-        designation: "Principal Founder"
+        img: "eddie.png",
+        name: "Eddie",
+        designation: "Founder (Marketing)"
+    },
+    {
+        img: "avinash.png",
+        name: "Avinash",
+        designation: "Founder (Finance)"
     }
 ];
 const RoadmapData = [
@@ -48,44 +53,59 @@ const RoadmapData = [
     },
     {
         header: 'NFT WEB MARKETPLACE & CONTRACT UPGRADE',
-        body: " Launch of web-based NFT marketplace and additional NFT features (collections, volume tracking, floor price tracking, and much more)",
+        body: "Launch of web-based NFT marketplace and additional NFT features (collections, volume tracking, floor price tracking, and much more)",
         footer: 'H1 - 2022'
     },
     {
-        header: 'SEED ROUND COMMENCEMENT',
-        body: "Seed round commencement with a maximum capital raise of US$1,850,000.00 enabling development, deployment, marketing and operations.",
-        footer: 'H1 - 2021'
+        header: 'RETAIL SERVICES',
+        body: "Launch of CryptoXpress Retail services, offering the ability to purchase retail items from your favorite local retailers, using cryptocurrencies.",
+        footer: 'H1 2023'
     },
+    {
+        header: 'TRAVEL SERVICES',
+        body: "Launch of CryptoXpress Travel services, offering the ability to make hotel and flight bookings globally, using cryptocurrencies.",
+        footer: 'H1 2023'
+    },
+    {
+        header: 'METAVERSE RETAIL LOCATION',
+        body: "Launch of the first CryptoXpress Metaverse outlet, offering the ability to purchase cryptocurrencies, NFTs, retail products and travel services in the Metaverse.",
+        footer: 'H2 2023'
+    },
+    {
+        header: 'E-BANKING SERVICES (EU)',
+        body: "Launch of CryptoXpress E-banking services, offering e-banking solutions such as customer fiat IBAN accounts and cryptocurrency debit cards.",
+        footer: 'H2 2023'
+    }
 ];
 const AdvisoryData = [
     {
-        img:'cryptoxpress-team-min.png',
-        name:'Min',
-        role:'Venture Capital Advisor',
+        img: 'cryptoxpress-team-min.png',
+        name: 'Min',
+        role: 'Venture Capital',
         url: 'www.google.com'
     },
     {
-        img:'cryptoxpress-team-mardo.png',
-        name:'Mardo',
-        role:'Industry Advisor',
+        img: 'cryptoxpress-team-mardo.png',
+        name: 'Mardo',
+        role: 'Industry',
         url: 'www.google.com'
     },
     {
-        img:'cryptoxpress-team-randall.png',
-        name:'Randall',
-        role:'Legal Advisor',
+        img: 'cryptoxpress-team-randall.png',
+        name: 'Randall',
+        role: 'Legal',
         url: 'www.google.com'
     },
     {
-        img:'cryptoxpress-team-eric.png',
-        name:'Eric',
-        role:'Security Advisor',
+        img: 'cryptoxpress-team-eric.png',
+        name: 'Eric',
+        role: 'Security',
         url: 'www.google.com'
     },
     {
-        img:'cryptoxpress-team-randall.png',
-        name:'Randall',
-        role:'Legal Advisor',
+        img: 'cryptoxpress-team-randall.png',
+        name: 'Randall',
+        role: 'Legal',
         url: 'www.google.com'
     }
 ];
@@ -135,7 +155,9 @@ const populateFounder = () => {
         let founders = document.createElement("div");
         founders.classList.add("founders-slide");
         let j = i;
-        for (; j < i + 4 && j < foundersData.length; j++) {
+        let x = Math.floor(document.getElementById('founder-population-point').clientWidth / 200);
+        console.log(x);
+        for (; j < i + x && j < foundersData.length; j++) {
             var item = foundersData[j];
             var founder = document.createElement('div');
             var image = document.createElement('img');
@@ -157,13 +179,19 @@ const populateFounder = () => {
 
             founder.appendChild(image);
             founder.appendChild(founder_part);
-
+            if(j==i){
+                founder.style.marginLeft = "0px";
+            }
             founders.append(founder);
 
         }
+
         const d_block = document.createElement('div');
-        d_block.classList.add("d-block", "w-100");
-        d_block.append(founders);
+        d_block.classList.add("d-flex","w-100", "justify-content-center");
+        const md = document.createElement('div');
+        md.classList.add('col-md-30');
+        md.append(founders);
+        d_block.append(md);
 
         var carouselString = "carousel-item";
         const nod = document.createElement('div');
@@ -197,7 +225,8 @@ const populateRoadmap = () => {
         let roadmaps = document.createElement("div");
         roadmaps.classList.add("roadmap-slide");
         let j = i;
-        for (; j < i + 4 && j < RoadmapData.length; j++) {
+        let x = Math.floor(document.getElementById('roadmap-population-point').clientWidth / 200);
+        for (; j < i + x && j < RoadmapData.length; j++) {
             var item = RoadmapData[j];
             let header = document.createElement('div');
             let body = document.createElement('div');
@@ -216,12 +245,17 @@ const populateRoadmap = () => {
             milestone.classList.add("milestones");
             card.append(milestone);
             card.classList.add("card", "text-center");
-
+            if(j==i){
+                card.style.marginLeft = "0px";
+            }
             roadmaps.append(card);
         }
         const d_block = document.createElement('div');
-        d_block.classList.add("d-block", "w-100");
-        d_block.append(roadmaps);
+        d_block.classList.add("d-flex","w-100", "justify-content-center");
+        const md = document.createElement('div');
+        md.classList.add('col-md-30');
+        md.append(roadmaps);
+        d_block.append(md);
 
         var carouselString = "carousel-item";
         const nod = document.createElement('div');
@@ -255,7 +289,8 @@ const populateAdvisory = () => {
         let advisors = document.createElement("div");
         advisors.classList.add("advisory-slide");
         let j = i;
-        for (; j < i + 4 && j < AdvisoryData.length; j++) {
+        let x = Math.floor(document.getElementById('advisory-population-point').clientWidth / 200);
+        for (; j < i + x && j < AdvisoryData.length; j++) {
             var item = AdvisoryData[j];
             console.log(item)
             let image = document.createElement('img');
@@ -287,11 +322,18 @@ const populateAdvisory = () => {
             member.classList.add('member');
             member.append(image, nameComponent, redirect);
 
+            if(j==i){
+                member.style.marginLeft = "0px";
+            }
+
             advisors.append(member);
         }
         const d_block = document.createElement('div');
-        d_block.classList.add("d-block", "w-100");
-        d_block.append(advisors);
+        d_block.classList.add("d-flex","w-100", "justify-content-center");
+        const md = document.createElement('div');
+        md.classList.add('col-md-30');
+        md.append(advisors);
+        d_block.append(md);
 
         var carouselString = "carousel-item";
         const nod = document.createElement('div');

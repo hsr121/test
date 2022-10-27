@@ -174,7 +174,7 @@
         <!-- Navbar End -->
 
         <div id="main" class="main">
-            <div class="hero">
+            <div class="hero" style="padding-bottom: 120px;">
                 <div class="container-m">
                     <div class="innerCont">
                         <div>
@@ -189,18 +189,17 @@
                                 </div>
                             </li>
                             <li>
-                                <ul class="arrows">
-                                    <li>
-                                        <div class="left-scroll-founders" onclick="prev()">
-                                            <img src="assets/images/left-chevron.png" />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="right-scroll-founders" onclick="next()">
-                                            <img src="assets/images/left-chevron.png" style="rotate: 180deg;" />
-                                        </div>
-                                    </li>
-                                </ul>
+                                <div class="arrows">
+                                    <div class="left-scroll-founders">
+                                        <img class="left-ar" style="margin-top: -25px;" onclick="prev()"
+                                            src="assets/images/left-chevron.png" />
+                                    </div>
+                                    <div class="left-scroll-founders">
+                                        <img class="right-ar" onclick="next()" src="assets/images/left-chevron.png"
+                                            style="rotate: 180deg;margin-top: -25px;" />
+                                    </div>
+
+                                </div>
                             </li>
 
                         </ul>
@@ -233,18 +232,17 @@
                             </div>
                         </li>
                         <li>
-                            <ul class="arrows">
-                                <li>
-                                    <div class="left-scroll-founders" onclick="prevRoadmap()">
-                                        <img src="assets/images/left-chevron.png" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="right-scroll-founders" onclick="nextRoadmap()">
-                                        <img src="assets/images/left-chevron.png" style="rotate: 180deg;" />
-                                    </div>
-                                </li>
-                            </ul>
+                            <div class="arrows">
+                                <div class="left-scroll-founders">
+                                    <img class="left-ar" style="margin-top: -25px;" onclick="prevRoadmap()"
+                                        src="assets/images/left-chevron.png" />
+                                </div>
+                                <div class="left-scroll-founders">
+                                    <img class="right-ar" onclick="nextRoadmap()" src="assets/images/left-chevron.png"
+                                        style="rotate: 180deg;margin-top: -25px;" />
+                                </div>
+
+                            </div>
                         </li>
 
                     </ul>
@@ -272,23 +270,22 @@
                         <li>
                             <div class="nav-item">
                                 <h2 class="hero-h2-text">
-                                    Advisory
+                                    Advisors
                                 </h2>
                             </div>
                         </li>
                         <li>
-                            <ul class="arrows">
-                                <li>
-                                    <div class="left-scroll-founders" onclick="prevAdvisory()">
-                                        <img src="assets/images/left-chevron.png" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="right-scroll-founders" onclick="nextAdvisory()">
-                                        <img src="assets/images/left-chevron.png" style="rotate: 180deg;" />
-                                    </div>
-                                </li>
-                            </ul>
+                            <div class="arrows">
+                                <div class="left-scroll-founders">
+                                    <img class="left-ar" style="margin-top: -25px;" onclick="prevAdvisory()"
+                                        src="assets/images/left-chevron.png" />
+                                </div>
+                                <div class="left-scroll-founders">
+                                    <img class="right-ar" onclick="nextAdvisory()" src="assets/images/left-chevron.png"
+                                        style="rotate: 180deg;margin-top: -25px;" />
+                                </div>
+
+                            </div>
                         </li>
 
                     </ul>
@@ -298,7 +295,7 @@
                         <ol id="advisory-indicator" class="carousel-indicators">
                         </ol>
                         <div id="advisory-population-point" class="carousel-inner">
-    
+
                         </div>
                         <a class="carousel-control-prev" id="leftAdvisory" href="#sliderAdvisory" role="button"
                             data-slide="prev">

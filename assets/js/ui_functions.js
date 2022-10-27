@@ -1,36 +1,36 @@
 const foundersData = [
     {
-        img: "yogesh.png",
+        img: "cryptoxpress-team-yogesh.png",
         name: "Yogesh",
         designation: "Founder (Vision)"
     },
     {
-        img: "adarsh.png",
+        img: "cryptoxpress-team-adarsh.png",
         name: "Adarsh",
         designation: "Founder (Operations)"
     },
     {
-        img: "Sherwin.png",
+        img: "cryptoxpress-team-sherwin.png",
         name: "Sherwin",
         designation: "Founder (Product)"
     },
     {
-        img: "zeeshan.png",
+        img: "cryptoxpress-team-zeeshan.png",
         name: "Zeeshan",
         designation: "Founder (Technology)"
     },
     {
-        img: "nilesh.png",
+        img: "cryptoxpress-team-nilz.png",
         name: "Nilesh",
         designation: "Founder (Growth)"
     },
+    // {
+    //     img: "eddie.png",
+    //     name: "Eddie",
+    //     designation: "Founder (Marketing)"
+    // },
     {
-        img: "eddie.png",
-        name: "Eddie",
-        designation: "Founder (Marketing)"
-    },
-    {
-        img: "avinash.png",
+        img: "cryptoxpress-team-avinash.png",
         name: "Avinash",
         designation: "Founder (Finance)"
     }
@@ -91,7 +91,7 @@ const AdvisoryData = [
         url: 'www.google.com'
     },
     {
-        img: 'cryptoxpress-team-randall.png',
+        img: 'cryptoxpress-team-randal.png',
         name: 'Randall',
         role: 'Legal',
         url: 'www.google.com'
@@ -100,12 +100,6 @@ const AdvisoryData = [
         img: 'cryptoxpress-team-eric.png',
         name: 'Eric',
         role: 'Security',
-        url: 'www.google.com'
-    },
-    {
-        img: 'cryptoxpress-team-randall.png',
-        name: 'Randall',
-        role: 'Legal',
         url: 'www.google.com'
     }
 ];
@@ -171,7 +165,7 @@ const populateFounder = () => {
             founder.classList.add("founder");
             founder_part.classList.add("founder-part");
 
-            image.src = "assets/images/" + item.img;
+            image.src = "assets/images/team/" + item.img;
             name.innerText += item.name;
             designation.innerText += item.designation;
             founder_part.appendChild(name);
@@ -293,7 +287,7 @@ const populateAdvisory = () => {
             console.log(item)
             let image = document.createElement('img');
             image.classList.add('member-img');
-            image.src = "assets/images/" + item.img;
+            image.src = "assets/images/team/" + item.img;
 
             let name = document.createElement('div');
             name.classList.add('member-name')

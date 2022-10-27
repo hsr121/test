@@ -298,6 +298,7 @@ const populateAdvisory = () => {
             image.src = "assets/images/" + item.img;
 
             let name = document.createElement('div');
+            name.classList.add('member-name')
             name.innerText += item.name;
 
             let role = document.createElement('div');

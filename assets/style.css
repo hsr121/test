@@ -1281,7 +1281,7 @@ top:50%; */
    }
 
    .memberRole {
-      font-size: small;
+      font-size: 15px;
       margin-top: 10px;
    }
 
@@ -1376,7 +1376,7 @@ top:50%; */
       text-align: center;
       margin-bottom: 10px;
       margin-top: 50px;
-      font-size: large;
+      font-size: 24px;
    }
 
    .founders-slide {
@@ -1393,6 +1393,7 @@ top:50%; */
       color: white;
       text-align: center;
       margin-bottom: 20px;
+      font-size: 15px;
    }
 
    .founder-image {
@@ -1436,18 +1437,22 @@ top:50%; */
 
    .card-header {
       display: table-row;
-      font-size: 12px;
+      font-size: 13px;
       color: white;
+      line-height: 150%;
    }
 
    .card-body {
       display: table-row;
-      font-size: 12px;
+      font-size: 13px;
       color: white;
+      line-height: 150%;
    }
 
    .card-foot {
+      display: table-row;
       color: white;
+      font-size: 20px;
    }
 
    .carousel-indicators li {
@@ -1865,6 +1870,10 @@ top:50%; */
       /* max-height: 350px; */
       height: 350px;
       /* max-width: 230px; */
+   }
+
+   .member-name{
+      font-size: 24px;
    }
 
    .team-member-card {

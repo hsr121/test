@@ -238,17 +238,15 @@ const populateRoadmap = () => {
             body.innerText += item.body;
             footer.innerText += item.footer;
 
-            header.classList.add("card-header");
-            body.classList.add("card-body");
-            footer.classList.add('card-foot');
+            header.classList.add("roadmap-text");
+            body.classList.add("roadmap-text");
+            footer.classList.add('roadmap-foot');
             milestone.append(header, body, footer);
             milestone.classList.add("milestones");
-            card.append(milestone);
-            card.classList.add("card", "text-center");
             if(j==i){
-                card.style.marginLeft = "0px";
+                milestone.style.marginLeft = "0px";
             }
-            roadmaps.append(card);
+            roadmaps.append(milestone);
         }
         const d_block = document.createElement('div');
         d_block.classList.add("d-flex","w-100", "justify-content-center");

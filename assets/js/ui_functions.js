@@ -37,26 +37,6 @@ const foundersData = [
 ];
 const RoadmapData = [
     {
-        header: 'SEED ROUND COMMENCEMENT',
-        body: "Seed round commencement with a maximum capital raise of US$1,850,000.00 enabling development, deployment, marketing and operations.",
-        footer: 'H1 - 2021'
-    },
-    {
-        header: 'CRYPTOXPRESS DEMO PLATFORM & PRO EXCHANGE',
-        body: "Seed round commencement with a maximum capital raise of US$1,850,000.00 enabling development, deployment, marketing and operations.",
-        footer: 'H1 - 2021'
-    },
-    {
-        header: 'CRYPTOXPRESS V1 LAUNCH',
-        body: "Launch of Fully Licensed CryptoXpress Version 1. Including IOS and Android apps with full NFT marketplace, cryptocurrency trading and built-in decentralized wallet.",
-        footer: 'H2 - 2021'
-    },
-    {
-        header: 'NFT WEB MARKETPLACE & CONTRACT UPGRADE',
-        body: "Launch of web-based NFT marketplace and additional NFT features (collections, volume tracking, floor price tracking, and much more)",
-        footer: 'H1 - 2022'
-    },
-    {
         header: 'RETAIL SERVICES',
         body: "Launch of CryptoXpress Retail services, offering the ability to purchase retail items from your favorite local retailers, using cryptocurrencies.",
         footer: 'H1 2023'

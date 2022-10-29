@@ -2,27 +2,32 @@ const foundersData = [
     {
         img: "cryptoxpress-team-yogesh.png",
         name: "Yogesh",
-        designation: "Founder (Vision)"
+        designation: "Founder",
+        pillar: 'Vision'
     },
     {
         img: "cryptoxpress-team-adarsh.png",
         name: "Adarsh",
-        designation: "Founder (Operations)"
+        designation: "Founder",
+        pillar: 'Operations'
     },
     {
         img: "cryptoxpress-team-sherwin.png",
         name: "Sherwin",
-        designation: "Founder (Product)"
+        designation: "Founder",
+        pillar: 'Product'
     },
     {
         img: "cryptoxpress-team-zeeshan.png",
         name: "Zeeshan",
-        designation: "Founder (Technology)"
+        designation: "Founder",
+        pillar: 'Technology'
     },
     {
         img: "cryptoxpress-team-nilz.png",
         name: "Nilesh",
-        designation: "Founder (Growth)"
+        designation: "Founder",
+        pillar: 'Growth'
     },
     // {
     //     img: "eddie.png",
@@ -32,7 +37,8 @@ const foundersData = [
     {
         img: "cryptoxpress-team-avinash.png",
         name: "Avinash",
-        designation: "Founder (Finance)"
+        designation: "Founder",
+        pillar: 'Finance'
     }
 ];
 const RoadmapData = [
@@ -62,25 +68,43 @@ const AdvisoryData = [
         img: 'cryptoxpress-team-min.png',
         name: 'Min',
         role: 'Venture Capital',
-        url: 'www.google.com'
+        url: 'https://www.linkedin.com/in/minkimd14/'
     },
     {
         img: 'cryptoxpress-team-mardo.png',
         name: 'Mardo',
         role: 'Industry',
-        url: 'www.google.com'
+        url: 'https://ee.linkedin.com/in/mardo-soo-00a05ab0'
     },
     {
         img: 'cryptoxpress-team-randal.png',
         name: 'Randall',
         role: 'Legal',
-        url: 'www.google.com'
+        url: 'https://www.linkedin.com/in/randallwjohnsonus'
     },
     {
         img: 'cryptoxpress-team-eric.png',
         name: 'Eric',
         role: 'Security',
-        url: 'www.google.com'
+        url: 'https://www.linkedin.com/in/eric-anderson-b407387'
+    },
+    {
+        img: 'cryptoxpress-team-will.png',
+        name: 'Will',
+        role: 'IDO',
+        url: 'https://tokenova.io/'
+    },
+    {
+        img: 'cryptoxpress-team-nathan.png',
+        name: 'Nathan',
+        role: 'Blockchain',
+        url: 'https://www.linkedin.com/in/nathan-kkk'
+    },
+    {
+        img: 'cryptoxpress-team-praj.png',
+        name: 'Prajwal',
+        role: 'NFT',
+        url: 'https://www.linkedin.com/in/thepraj'
     }
 ];
 
@@ -138,22 +162,26 @@ const populateFounder = () => {
             var name = document.createElement("div");
             var designation = document.createElement("div");
             var founder_part = document.createElement("div");
+            var pillar = document.createElement('div');
 
             name.classList.add("founder-name");
             designation.classList.add("designation");
             image.classList.add("founder-image");
             founder.classList.add("founder");
             founder_part.classList.add("founder-part");
+            pillar.classList.add('founder-pillar');
 
             image.src = "assets/images/team/" + item.img;
             name.innerText += item.name;
             designation.innerText += item.designation;
+            pillar.innerText += item.pillar;
             founder_part.appendChild(name);
             founder_part.appendChild(designation);
+            founder_part.appendChild(pillar);
 
             founder.appendChild(image);
             founder.appendChild(founder_part);
-            if(j==i){
+            if (j == i) {
                 founder.style.marginLeft = "0px";
             }
             founders.append(founder);
@@ -161,7 +189,7 @@ const populateFounder = () => {
         }
 
         const d_block = document.createElement('div');
-        d_block.classList.add("d-flex","w-100", "justify-content-center");
+        d_block.classList.add("d-flex", "w-100", "justify-content-center");
         const md = document.createElement('div');
         md.classList.add('col-md-30');
         md.append(founders);
@@ -217,13 +245,13 @@ const populateRoadmap = () => {
             footer.classList.add('roadmap-foot');
             milestone.append(header, body, footer);
             milestone.classList.add("milestones");
-            if(j==i){
+            if (j == i) {
                 milestone.style.marginLeft = "0px";
             }
             roadmaps.append(milestone);
         }
         const d_block = document.createElement('div');
-        d_block.classList.add("d-flex","w-100", "justify-content-center");
+        d_block.classList.add("d-flex", "w-100", "justify-content-center");
         const md = document.createElement('div');
         md.classList.add('col-md-30');
         md.append(roadmaps);
@@ -247,6 +275,7 @@ const populateRoadmap = () => {
 
 const populateAdvisory = () => {
     let set = 0;
+    const links = [];
     for (let i = 0; i < AdvisoryData.length; i++) {
         let listItem = document.createElement('li');
         listItem.setAttribute("data-target", '#sliderAdvisory');
@@ -283,26 +312,24 @@ const populateAdvisory = () => {
 
             let linkedIn = document.createElement('img');
             linkedIn.classList.add('linkedinLogo');
-            linkedIn.src = 'assets/images/linkedin-icon.png';
-
-            let redirect = document.createElement('a');
-            // redirect.onclick((e) => {
-            //     window.open(item.url, '_blank');
-            // });
-            redirect.append(linkedIn);
+            linkedIn.src =
+                item.name == 'Will'
+                    ? 'assets/images/cx-tokenova-icon.jpg'
+                    : 'assets/images/linkedin-icon.png';
 
             let member = document.createElement('div');
             member.classList.add('member');
-            member.append(image, nameComponent, redirect);
+            member.append(image, nameComponent, linkedIn);
 
-            if(j==i){
+            if (j == i) {
                 member.style.marginLeft = "0px";
             }
 
             advisors.append(member);
+            links.push({ node: linkedIn, url: item.url });
         }
         const d_block = document.createElement('div');
-        d_block.classList.add("d-flex","w-100", "justify-content-center");
+        d_block.classList.add("d-flex", "w-100", "justify-content-center");
         const md = document.createElement('div');
         md.classList.add('col-md-30');
         md.append(advisors);
@@ -322,4 +349,10 @@ const populateAdvisory = () => {
     console.log($("#sliderAdvisory").carousel({
         interval: false
     }));
+    links.forEach((val) => {
+        function fun() {
+            window.open(val.url, '_blank');
+        };
+        val.node.addEventListener('click', fun, false);
+    });
 }

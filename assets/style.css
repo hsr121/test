@@ -1346,6 +1346,8 @@ top:50%; */
    .left-ar {
       margin-top: -25px;
       border-radius: 3px;
+      min-width: 30px;
+      min-height: 30px;
       background-color: #00B7A1;
       margin-right: 10px;
    }
@@ -1473,6 +1475,8 @@ top:50%; */
       border-radius: 3px;
       background-color: #00B7A1;
       margin-top: -25px;
+      min-width: 30px;
+      min-height: 30px;
    }
 
    .hero-arrows li:last-child {

@@ -148,18 +148,6 @@ const nextAdvisory = function () {
     document.getElementById('nextAdvisory').click();
 }
 
-let start = 0;
-let end = 0;
-
-const swipe = () => {
-    if(start > end){
-        document.getElementById('right').click();
-    }
-    if(end > start){
-        document.getElementById('left').click();
-    }
-};
-
 const populateFounder = () => {
     let set = 0;
     const nodes = [];
@@ -231,22 +219,31 @@ const populateFounder = () => {
     }
     const point = document.getElementById('founder-population-point');
     point.firstElementChild?.classList.add('active');
-    console.log($("#slider").carousel({
+    $("#slider").carousel({
         interval: false
-    }));
+    })
     nodes.forEach(({ card, url }) => {
         function fun() {
             window.open(url, '_blank');
         };
         card.addEventListener('click', fun, false);
     });
-    point.addEventListener('touchstart', e => {
-        start = e.changedTouches[0].screenX;
-        console.log(start);
-    });
-    point.addEventListener('touchend', e => {
-        end = e.changedTouches[0].screenX;
-        swipe();
+    $("#slider").on('touchstart', function (event) {
+        const xClick = event.originalEvent.touches[0].pageX;
+        $(this).one('touchmove', function (event) {
+            const xMove = event.originalEvent.touches[0].pageX;
+            const sensitivityInPx = 5;
+
+            if (Math.floor(xClick - xMove) > sensitivityInPx) {
+                $(this).carousel('next');
+            }
+            else if (Math.floor(xClick - xMove) < -sensitivityInPx) {
+                $(this).carousel('prev');
+            }
+        });
+        $(this).on('touchend', function () {
+            $(this).off('touchmove');
+        });
     });
 }
 

@@ -153,12 +153,12 @@ let end = 0;
 
 const swipe = () => {
     if(start > end){
-        document.getElementById('left').click();
-    }
-    if(end > start){
         document.getElementById('right').click();
     }
-}
+    if(end > start){
+        document.getElementById('left').click();
+    }
+};
 
 const populateFounder = () => {
     let set = 0;
